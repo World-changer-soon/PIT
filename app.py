@@ -1,12 +1,12 @@
 import streamlit as st
- import sympy as sp
- import numpy as np
- import matplotlib.pyplot as plt
- from io import StringIO
+import sympy as sp
+import numpy as np
+import matplotlib.pyplot as plt
+from io import StringIO
  
  # Page configuration is set in the main() function
  
- def parse_expression(expr_str):
+def parse_expression(expr_str):
      """Parse a string mathematical expression into a SymPy expression.
      Handles common alternative syntax formats, including standard mathematical notation."""
      try:
@@ -77,7 +77,7 @@ import streamlit as st
          st.info("Try using standard formats like 'x^2', 'sin(x)', or even 'f(x) = 3x^2 + 2x - 5'. For more examples, see the sidebar.")
          return None
  
- def plot_function(expr, x_range=(-10, 10), points=1000, is_derivative=False, is_integral=False, is_original=True):
+def plot_function(expr, x_range=(-10, 10), points=1000, is_derivative=False, is_integral=False, is_original=True):
      """Generate a plot for the given expression with improved styling."""
      x = sp.symbols('x')
      
@@ -152,7 +152,7 @@ import streamlit as st
      
      return fig
  
- def main():
+def main():
      """Main function for the Calculus Solver app."""
      # Set custom page metadata to remove Replit references
      st.set_page_config(
@@ -395,5 +395,5 @@ import streamlit as st
          except Exception as e:
              st.error(f"Error calculating limit: {str(e)}")
  
- if __name__ == "__main__":
+if __name__ == "__main__":
      main()
